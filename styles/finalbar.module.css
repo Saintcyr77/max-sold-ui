@@ -1,0 +1,13 @@
+.component{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #313339;
+    width: 100%;
+    height: 7vh;
+}
+
+.component h5{
+    color: #FFFFFF;
+    padding-left: 20px;
+}

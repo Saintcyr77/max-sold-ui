@@ -1,0 +1,13 @@
+.container{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #40404E;
+    color: #FFFFFF;
+    padding-bottom: 10px;
+    padding-top: 10px;
+
+}
+.container a{
+    padding-left: 10px;
+}
