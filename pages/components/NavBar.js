@@ -2,6 +2,7 @@ import React from "react";
 // import PrimaryButton from "./PrimaryButton";
 import { Button } from '@mui/material';
 import Divider from '@mui/material/Divider';
+import { useRouter } from "next/router";
 import {
   AppBar,
   Box,
@@ -31,6 +32,7 @@ const NavBar = () => {
       minHeight: "20px !important",
     };
   });
+  const router = useRouter();
   return (
     <>
       <AppBar
@@ -90,7 +92,9 @@ const NavBar = () => {
           }}
         >
           <Typography variant="h6">866-602-9253</Typography>
-          <Button variant="contained" href="#contained-buttons" sx={{width:"200px",bgcolor:"#FFFFFF",color:"#2E6F94"}}>Change Location</Button>
+          <Button variant="contained" href="#contained-buttons" sx={{width:"200px",bgcolor:"#FFFFFF",color:"#2E6F94"}} onClick={()=>{
+           router.push("/")
+          }}>Change Location</Button>
         </Box>
       </Box>
     </>

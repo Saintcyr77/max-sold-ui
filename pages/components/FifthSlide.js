@@ -28,8 +28,9 @@ function FifthSlide(props) {
   const value = useContext(Context);
   console.log("outside");
   React.useEffect(()=>{
-    console.log(JSON.stringify(value.registrationapi));
-    console.log("holo")
+    // console.log(JSON.stringify(value.registrationapi));
+    console.log(current.registrationApi);
+    
 
     async function postData(){
      

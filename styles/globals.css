@@ -102,3 +102,24 @@ a {
     color-scheme: dark;
   }
 }
+.slick-arrow{
+  background-color: black !important;
+  color: white;
+ 
+}
+.slick-prev, .slick-next{
+  height: 50px;
+  width: 50px;
+}
+
+
+@media (max-width: 600px) {
+  .react-player {
+    width: 300px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+}
+
+

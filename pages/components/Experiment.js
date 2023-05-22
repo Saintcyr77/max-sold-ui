@@ -18,9 +18,9 @@ function Experiment(props) {
   function handleDropdown(down) {
     console.log(down.reasonId);
     setValue('sd', down.reasonId);
-    value.setRegistrationApi({
-      reasonToSell: down.reasonId,
-    });
+    // value.setRegistrationApi({
+    //   reasonToSell: down.reasonId,
+    // });
   }
 
   const [currencies, setCurrencies] = useState([]);
@@ -57,13 +57,13 @@ function Experiment(props) {
       props.nextFormStep();
     }
 
-    value.setRegistrationApi({
-      firstName: data.fname,
-      lastName: data.lastname,
-      email: data.email,
-      phoneNumber: data.phone,
-      reasonToSell: data.sd,
-    });
+    // value.setRegistrationApi({
+    //   firstName: data.fname,
+    //   lastName: data.lastname,s
+    //   email: data.email,
+    //   phoneNumber: data.phone,
+    //   reasonToSell: data.sd,
+    // });
     dispatch(reduxwalanaam({
       firstName: data.fname,
       lastName: data.lastname,

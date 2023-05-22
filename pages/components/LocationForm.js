@@ -80,7 +80,8 @@ const LocationForm = (props) => {
   const[dropdown,setDropdown] = useState([]);
  
   React.useEffect(()=>{
-    console.log("use efeect working");
+    // console.log("use efeect working");
+    console.log(current.registrationApi);
     async function fetchDropdown(){
      
       const config = {

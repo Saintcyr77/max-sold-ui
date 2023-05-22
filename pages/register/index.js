@@ -1,70 +1,58 @@
 import { hydrate } from 'react-dom';
 import ReactPlayer from 'react-player'
 import Head from 'next/head'
-import { BrowserRouter } from 'react-router-dom';
 import Image from 'next/image'
 import Button from '@mui/material/Button';
 import { Inter } from 'next/font/google'
-import { useTheme, makeStyles } from '@mui/material/styles';
+import { useTheme } from '@mui/material/styles';
 import ShoppingBagIcon from '@mui/icons-material/ShoppingBag';
 import styles from '@/styles/Home.module.css'
-import FormPropsTextFields from './components/FormPropsTextFields'
-import Experiment from './components/Experiment'
-import Header from './components/Header.'
-import Boxx from './components/Boxx'
-import SecondSlide from './components/SecondSlide'
+import FormPropsTextFields from '../components/FormPropsTextFields';
+import Experiment from '../components/Experiment'
+import Header from '../components/Header.'
+// import Boxx from '..Boxx/components/Boxx'
+import SecondSlide from '../components/SecondSlide'
 import { Box, Container, Divider, Grid, Typography,Avatar } from "@mui/material";
-import ThirdSlide from './components/ThirdSlide'
-import FourthSlide from './components/FourthSlide'
-import FifthSlide from './components/FifthSlide'
-import Errorr from './components/Error'
-import NavBar from './components/NavBar'
+import ThirdSlide from '../components/ThirdSlide'
+import FourthSlide from '../components/FourthSlide'
+import FifthSlide from '../components/FifthSlide'
+import Errorr from '../components/Error'
+import NavBar from '../components/NavBar'
 import { ThemeProvider } from '@emotion/react'
 import { theme } from '@/theme'
 import { Component, useState } from 'react'
 import { Height } from '@mui/icons-material'
-import Finalbar from './components/FinalBar'
+import Finalbar from '../components/FinalBar'
 import * as React from 'react';
 import MobileStepper from '@mui/material/MobileStepper';
 const inter = Inter({ subsets: ['latin'] })
 import KeyboardArrowLeft from '@mui/icons-material/KeyboardArrowLeft';
 import KeyboardArrowRight from '@mui/icons-material/KeyboardArrowRight';
-import ProgressMobileStepper from './components/Progressbar';
-import LocationForm from './components/LocationForm';
-import Mapp from './components/Map';
+import ProgressMobileStepper from '../components/Progressbar';
+import LocationForm from '../components/LocationForm';
+// import Mapp from './components/Map';
 // import { MapsComponent } from '@syncfusion/ej2-react-maps';
 import CheckCircleOutlineIcon from "@mui/icons-material/CheckCircleOutline";
 import { VectorMap } from '@south-paw/react-vector-maps';
-import CanadaMap from './components/CanadaMap';
-import NewFooter from './components/NewFooter';
+import CanadaMap from '../components/CanadaMap';
+import NewFooter from '../components/NewFooter';
 import { createContext } from 'react';
-import { ErrorBoundary } from './components/ErrorBoundry';
+import { ErrorBoundary } from '../components/ErrorBoundry';
 import { Provider } from 'react-redux';
-import Store from './Store';
+// import Store from './Store';
 export const Context = createContext('Default Value')
 import { useDispatch } from 'react-redux';
-import NavNav from './max-sold-homepage/UnlockValue';
-import store from './Store/index';
-import Fivehundredk from './max-sold-homepage/Fivehundredk';
-import UnlockValue from './max-sold-homepage/UnlockValue';
-import ArtCollectibles from './max-sold-homepage/ArtCollectibles';
-import VideoApp from './max-sold-homepage/VideoApp';
-import "slick-carousel/slick/slick.css"; 
-import "slick-carousel/slick/slick-theme.css";
-import Responsive from './max-sold-homepage/Responsive';
-import SellerManagedCard from './max-sold-homepage/SellerManagedCard';
-import { useMediaQuery } from '@mui/material';
-import SellAnywhere from './max-sold-homepage/SellAnywhere';
-'use client';
-import { useRouter } from 'next/navigation';
-import ACP from './max-sold-homepage/ACP';
-import Icons from './max-sold-homepage/Icons';
+// import NavNav from './max-sold-homepage/UnlockValue';
+import store from '../Store/index';
+import Fivehundredk from '../max-sold-homepage/Fivehundredk';
+import UnlockValue from '../max-sold-homepage/UnlockValue';
+import ArtCollectibles from '../max-sold-homepage/ArtCollectibles';
+// import VideoApp from './max-sold-homepage/VideoApp';
 export default function Home() {
   const[formStep,setFormStep] = useState(0);
   const [progress, setProgress] = React.useState("");
   const[experiment, setExperimentData] = useState(false);
   const[value,setStateValues] = useState("");
-  const router = useRouter();
 
   const[registrationapi,setRegistrationApi] = useState({
     "firstName": "",
@@ -382,286 +370,324 @@ export default function Home() {
 const[serving,setServing] = useState(true);
 const[territory,setTerritory] = useState(0);
   return (
-    // <BrowserRouter>
     <Provider store={store}>
       
       
     <Context.Provider value = {{registrationapi,setRegistrationApi}}>
-   
     <ThemeProvider theme={theme}>
     {/* <Header></Header>
     <Boxx></Boxx> */}
     {/* <MapComponent></MapComponent> */}
 
     <NavBar></NavBar>
-    <Grid container spacing={2} sx={{display:"flex",'@media (max-width: 600px)': {  
-          width:"100%",
-         
-        }}}>
-        <Grid item  lg={6} sm={7} xs={12} sx={{marginTop:"25px"}}>
-          <Box sx={{display:"flex",flexDirection:"column",maxWidth:"60%",margin:"0px auto",
-        '@media (max-width: 600px)': {  
-          width:"100%",
-          display:"flex",
-          justifyContent:"center"
-         
-        }
-        }}>
-            <Typography variant='h3'gutterBottom sx={{'@media (max-width: 600px)': {  
-          fontSize:"20px",
-          textAlign: "center"
-         
-        }}}> 
-              Auction-based selling: the <br></br>
-              one-stop-shop for clearing <br></br>
-              space
-            </Typography>
-            <Button variant="contained" sx={{width:"40%",padding:"10px",
-            
-            '@media (max-width: 600px)': {  
-              width:"100%",
-              padding:"10px",
-              whiteSpace: "nowrap",
-              display:"flex",
-              justifyContent:"center",
-           
-             
-            }}} onClick={()=>
-              router.push("/register")
-            }>Start Selling Now</Button>
-
-          </Box>
-
-        </Grid>
-
-        <Grid item sm={5} sx={{grid:{md:"12"}}}>
+    
 
 
-        <Box sx={{display:"flex",justifyContent:"center",
-        '@media (max-width: 600px)': {  
-          width:"100%",
-          display:"flex",
-          justifyContent:"center"
-         
-        }
-      }}>
-
-     
-
-         <ReactPlayer url='https://www.youtube.com/watch?v=aQvjnM0bgxA&t=10s'
-        className = 'react-player'
-        control
-        width="400px"
-        height="242px"
-
-         
-           /> 
-      
-        </Box>
-           {/* hydration error */}
         
+
+         
+    
+    {/* <VectorMap {...worldLowRes} /> */}
+    <Container maxWidth="xl" sx={{display:"flex",flexDirection:"column",alignItems:"center",justifyContent:"center",marginTop:"0px",gap:2}}>
+
+    <Box display="flex" flexDirection="row"justifyContent="space-between" alignItems="center">
+    <Divider  sx={{width:"300px",marginRight:"10px"}} />
+    <Typography variant='h4' component='h4'>
+     Let's begin your selling journey
+     </Typography>
+     <Divider sx={{width:"300px",marginLeft:"10px"}}/>
+
+    </Box>
+     <Typography variant='body1' component='body1' gutterBottom >
+     Our experts will find the sale solution that's right for you.
+     </Typography>
+{/* <Mapp></Mapp> */}
+    </Container>
+
+    <Container maxWidth="lg">
+
+      <Grid container>
+        <Grid item md={8} xs={12}>
+          <ErrorBoundary>
+        
+          {formStep>=1 && formStep<4 && !isDisabled&&(
+            <Container maxWidth="lg" sx={{marginTop:"20px"}}>
+              <ProgressMobileStepper activeStep={activeStep} setActiveStep={setActiveStep} handleBack={handleBack} handleNext={handleNext}></ProgressMobileStepper>
+            </Container>
+          )}
+          
+        {formStep == 0 && (
+          <Experiment
+          formStep={formStep}
+          nextFormStep={nextFormStep}
+    setExperimentData={setExperimentData}
+    currentStep={formStep}
+    prevFormStep={prevFormStep}
+  ></Experiment>
+)}
+
+{formStep == 1 &&(
+  
+  <LocationForm
+  handleNext={handleNext}
+  setServing={setServing}
+  setTerritory={setTerritory}
+  setAskLocation={setAskLocation}
+  formStep={formStep}
+  nextFormStep={nextFormStep}
+  // setFormStep={setFormStep}
+  ></LocationForm>
+)}
+
+
+{formStep == 2 && (    
+    <ThirdSlide 
+    handleNext={handleNext}
+    asklocation={asklocation}
+    formStep={formStep}
+    handleBack={handleBack}
+    nextFormStep={nextFormStep}
+    prevFormStep={prevFormStep}
+    ></ThirdSlide>
+)}
+
+{/* {formStep == 3 &&(
+   asklocation==="Alaska"?<Errorr asklocation={asklocation}  worldLowRes={worldLowRes}></Errorr>:
+    <FourthSlide 
+    handleNext={handleNext}
+    // setFormStep={setFormStep}
+    formStep={formStep}
+    nextFormStep={nextFormStep}
+    ></FourthSlide>
+)} */} 
+
+{formStep == 3 && (
+   serving===false && territory===2 ? (
+     <Errorr asklocation={asklocation} worldLowRes={worldLowRes} setDisabled={setDisabled}></Errorr>
+   ) : serving===false&&territory===1 ? (
+     <CanadaMap asklocation={asklocation} setDisabled={setDisabled}></CanadaMap>
+   ) : (
+     <FourthSlide 
+       handleNext={handleNext}
+       formStep={formStep}
+       nextFormStep={nextFormStep}
+     ></FourthSlide>
+   )
+)}
+
+   {formStep == 4 &&  (
+    
+    <FifthSlide ></FifthSlide>
+
+   )}
+   </ErrorBoundary> 
+   {/* <CanadaMap></CanadaMap> */}
+
+
+    {/* <Errorr worldLowRes={worldLowRes}>
+    </Errorr> */}
+        </Grid>
+        <Divider
+              orientation="vertical"
+              variant="middle"
+              flexItem
+              sx={{ margin: "0px 35px" }}
+            />
+        <Grid item md={3} xs={12}>
+        <Box sx={{ marginTop: "20px" }}>
+                <Typography variant="h6" sx={{ marginBottom: "15px" }}>
+                  Sell your items fast
+                </Typography>
+                <Box
+                  sx={{
+                    display: "flex",
+                    marginBottom: "15px",
+                    justifyContent: "center",
+                  }}
+                >
+                  <Box
+                    sx={{
+                      display: "flex",
+                      justifyContent: "flex-start",
+                      alignItems: "flex-start",
+                      flex: 1,
+                    }}
+                  >
+                    <Avatar sx={{ bgcolor: "#F2F9FB", width: 30, height: 30 }}>
+                      <CheckCircleOutlineIcon
+                        sx={{
+                          color: "#2E6F94",
+                          width: 25,
+                          height: 25,
+                          fontWeight: "lighter",
+                        }}
+                      />
+                    </Avatar>
+                  </Box>
+                  <Box
+                    sx={{
+                      display: "flex",
+                      flexDirection: "column",
+                      justifyContent: "center",
+                      alignItems: "flex-start",
+                      flex: 4,
+                    }}
+                  >
+                    <Typography
+                      gutterBottom
+                      variant="body1"
+                      sx={{
+                        fontWeight: "lighter",
+                      }}
+                    >
+                      Items cleared out on your schedule
+                    </Typography>
+                  </Box>
+                </Box>
+                <Box
+                  sx={{
+                    display: "flex",
+                    marginBottom: "15px",
+                    justifyContent: "center",
+                  }}
+                >
+                  <Box
+                    sx={{
+                      display: "flex",
+                      justifyContent: "flex-start",
+                      alignItems: "flex-start",
+                      flex: 1,
+                    }}
+                  >
+                    <Avatar sx={{ bgcolor: "#F2F9FB", width: 30, height: 30 }}>
+                      <CheckCircleOutlineIcon
+                        sx={{
+                          color: "#2E6F94",
+                          width: 25,
+                          height: 25,
+                          fontWeight: "lighter",
+                        }}
+                      />
+                    </Avatar>
+                  </Box>
+                  <Box
+                    sx={{
+                      display: "flex",
+                      flexDirection: "column",
+                      justifyContent: "center",
+                      alignItems: "flex-start",
+                      flex: 4,
+                    }}
+                  >
+                    <Typography
+                      gutterBottom
+                      variant="body1"
+                      sx={{
+                        fontWeight: "lighter",
+                      }}
+                    >
+                      Items cleared out on your schedule
+                    </Typography>
+                  </Box>
+                </Box>
+                <Box
+                  sx={{
+                    display: "flex",
+                    marginBottom: "15px",
+                    justifyContent: "center",
+                  }}
+                >
+                  <Box
+                    sx={{
+                      flex: 1,
+                    }}
+                  >
+                    <Avatar sx={{ bgcolor: "#F2F9FB", width: 30, height: 30 }}>
+                      <CheckCircleOutlineIcon
+                        sx={{
+                          color: "#2E6F94",
+                          width: 25,
+                          height: 25,
+                          fontWeight: "lighter",
+                        }}
+                      />
+                    </Avatar>
+                  </Box>
+                  <Box
+                    sx={{
+                      flex: 4,
+                    }}
+                  >
+                    <Typography
+                      gutterBottom
+                      variant="body1"
+                      sx={{
+                        fontWeight: "lighter",
+                      }}
+                    >
+                      Items cleared out on your schedule
+                    </Typography>
+                  </Box>
+                </Box>
+                <Box
+                  sx={{
+                    display: "flex",
+                    marginBottom: "15px",
+                    justifyContent: "center",
+                  }}
+                >
+                  <Box
+                    sx={{
+                      display: "flex",
+                      justifyContent: "flex-start",
+                      alignItems: "flex-start",
+                      flex: 1,
+                    }}
+                  >
+                    <Avatar sx={{ bgcolor: "#F2F9FB", width: 30, height: 30 }}>
+                      <CheckCircleOutlineIcon
+                        sx={{
+                          color: "#2E6F94",
+                          width: 25,
+                          height: 25,
+                          fontWeight: "lighter",
+                        }}
+                      />
+                    </Avatar>
+                  </Box>
+                  <Box
+                    sx={{
+                      display: "flex",
+                      flexDirection: "column",
+                      justifyContent: "center",
+                      alignItems: "flex-start",
+                      flex: 4,
+                    }}
+                  >
+                    <Typography
+                      gutterBottom
+                      variant="body1"
+                      sx={{
+                        fontWeight: "lighter",
+                      }}
+                    >
+                      Items cleared out on your schedule
+                    </Typography>
+                  </Box>
+                </Box>
+              </Box>
         </Grid>
       </Grid>
-     
-      <Typography variant='h4' sx={{display:"flex",justifyContent:"center",marginTop:"40px",fontWeight:"bolder",
-     '@media (max-width: 600px)': {  
-       textAlign: "center"
-     
-    }}}>
-        Unlock value by selling smarter not harder
-
-        </Typography>
-     <Container maxWidth="xl" sx={{display:"flex",flexDirection:"column",marginTop:"20px",gap:4}}>
-
-        <Box sx={{display:"flex",flexDirection:"row",justifyContent:"space-around",width:"100%",
-      '@media (max-width: 600px)': {  
-        display:"flex",
-        flexDirection: "column",
-        width: "100%",
-        justifyContent: "center",
-        alignItems: "center",
-        gap:2
-       
-      }}}>
-        <UnlockValue></UnlockValue>
-      <UnlockValue></UnlockValue>
-        </Box>
-        <Box sx={{display:"flex",flexDirection:"row",justifyContent:"space-around",width:"100%",
-         '@media (max-width: 600px)': {  
-          display:"flex",
-          flexDirection: "column",
-          width: "100%",
-          justifyContent: "center",
-          alignItems: "center",
-          gap:2
-         
-        }}}>
-        <UnlockValue></UnlockValue>
-      <UnlockValue></UnlockValue>
-        </Box>
-     </Container>
-
-     <Typography variant='h5' sx={{display:"flex",justifyContent:"center",marginTop:"100px",fontWeight:"bolder",
-         '@media (max-width: 600px)': {  
-          textAlign: "center",
-          marginTop: "20px"
-        
-       }}}>
-     We sell a diverse range of categories
-        </Typography>
-
-        <Typography variant='body1' sx={{display:"flex",justifyContent:"center",marginTop:"5px",marginBottom:"10px",
-           '@media (max-width: 600px)': {  
-            textAlign: "center"
-          
-         }}}>
-        We've sold it all, our marketplace is filled with an extensive range of categories, spanning from A to Z.
-        </Typography>
-
-        <Container maxWidth="xl" sx={{display:"flex",flexDirection:"column",gap:2,justifyContent:"center",alignItems:"center"}}>
-          <Box sx={{display:"flex", gap:"150px",justifyContent:"space-around",
-            '@media (max-width: 600px)': {  
-              width:"100%",
-              display:"flex",
-              justifyContent:"center",
-              flexDirection: "column",
-              gap:"20px",
-             
-            }}}>
-            <ArtCollectibles></ArtCollectibles>
-            <ArtCollectibles></ArtCollectibles>
-            <ArtCollectibles></ArtCollectibles>
-            <ArtCollectibles></ArtCollectibles>
-          </Box>
-
-          <Box sx={{display:"flex", gap:"150px",
-        '@media (max-width: 600px)': {  
-          width:"100%",
-          display:"flex",
-          justifyContent:"center",
-          flexDirection: "column",
-          gap:"20px"
-         
-        }}}>
-            <ArtCollectibles></ArtCollectibles>
-            <ArtCollectibles></ArtCollectibles>
-            <ArtCollectibles></ArtCollectibles>
-            <ArtCollectibles></ArtCollectibles>
-          </Box>
-
-        </Container>
-
-        <Typography variant='h5' sx={{display:"flex",justifyContent:"center",marginTop:"5px", color:"#2E6F94",marginBottom:"20px",marginTop:"20px",
-      '@media (max-width: 600px)':{
-        fontSize: "small",
-        width: "100%",
-        display: "flex",
-        justifyContent: "center"
-       }}}>
-        And everything in between!
-        </Typography>
-        
-        <Fivehundredk></Fivehundredk>
-
-
-        <Box sx={{margin: "25px 150px", '@media (max-width: 600px)': {  
-         
-        }}}>
-        <Responsive></Responsive>
-        </Box>
-
-
-        <Box sx={{width: "100%", bgcolor:"#F2F8FD",marginTop:"40px"}}>
-        <Typography variant='h5' sx={{display:"flex",justifyContent:"center",paddingTop:"20px",fontWeight:"bolder",marginBottom:"20px",
-      '@media (max-width: 600px)': {  
-          
-        display:"flex",
-        justifyContent:"center",
-        textAlign: "center",
-        margin: "0px 10px"
-       
-      }}}>
-        Choose the service that's right for you
-        </Typography>
-
-        <Typography variant='body1' sx={{display:"flex",justifyContent:"center",marginTop:"5px",marginTop:"20px",alignItems:"center",textAlign:"center",
-       '@media (max-width: 600px)': {  
-        fontSize: "20px"
-       
-      }}}>
-        Whether you prefer a hands-on approach or want us to handle everything,<br></br> we offer DIY and Full-Service options.
-        </Typography>
-          
-          <SellerManagedCard/>
-
-          </Box>
-
-          <Typography variant='h5' sx={{display:"flex",justifyContent:"center",marginTop:"0px",fontWeight:"bolder",marginBottom:"20px",'@media (max-width: 600px)': {  
-          
-          display:"flex",
-          justifyContent:"center",
-          textAlign: "center",
-          
-         
-        }}}>
-          Clear out your space fast!
-        </Typography>
-
-        <Typography variant='body1' sx={{display:"flex",justifyContent:"center",marginTop:"5px",marginBottom:"20px",marginTop:"20px",alignItems:"center",textAlign:"center"}}>
-        Join thousands of happy clients who have used MaxSold <br></br> to save time and turn their contents into cash.
-        </Typography>
-
-        <Box sx={{display:"flex",justifyContent:"center",marginBottom:"40px"}}>
-          <Button variant='contained' sx={{bgcolor:"#2E6F94"}}>
-            Start Selling Now
-
-          </Button>
-        </Box>
-         
-        <Container maxWidth="xl">
-        <Box sx={{display:"flex",justifyContent:"space-between", gap:"94px",
-      
-      '@media (max-width: 600px)': {  
-        width: "100%",
-        display:"flex",
-        justifyContent:"center",
-        gap: 4,
-        flexWrap: "wrap"
-       
-      }}}>
-          <img src="img1.png" alt="bostonglobe"></img>
-          <img src="img2.png" alt="bostonglobe"></img>
-          <img src="img3.png" alt="bostonglobe"></img>
-          <img src="img4.png" alt="bostonglobe"></img>
-          <img src="img5.png" alt="bostonglobe"></img>
-          <img src="img6.png" alt="bostonglobe" ></img>
-          <img src="img7.png" alt="bostonglobe" ></img>
-          <img src="img8.png" alt="bostonglobe" ></img>
-        </Box>
-        </Container>
-
-        <Container maxWidth="xl">
-
-<SellAnywhere></SellAnywhere>
-        </Container>
-
-        <Container maxWidth="xl" sx={{marginTop:"50px"}}>
-
-        <ACP></ACP>
-        <Icons></Icons>
-        </Container>
-        <Finalbar></Finalbar>
-
-  
-       
-         
-
-        
-  
+   
+    </Container>
+    <Container maxWidth="xl">
+    <NewFooter></NewFooter>
+    </Container>
+    {/* <FinalFooter></FinalFooter> */}
+    <Finalbar></Finalbar>
     </ThemeProvider>
     </Context.Provider>
-     </Provider>
-      // </BrowserRouter> 
+    // </Provider>
     
 
   )

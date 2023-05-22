@@ -117,10 +117,10 @@ console.log(current.registrationApi);
       }
     }
     const requestbody = {
-      email: value.registrationapi.email
+      email: current.registrationApi.email
     }
     console.log(requestbody);
-    console.log(value.registrationapi.email);
+    // console.log(value.registrationapi.email);
     const res = await axios.put("https://seller-dev.api.maxsold.com/notify",requestbody,config)
 
     console.log(res);
